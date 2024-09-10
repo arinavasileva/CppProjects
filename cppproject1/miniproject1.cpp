@@ -69,3 +69,23 @@ int main() {
 
     return 0;
 }
+
+/* Question 1: Is the counter value COLS * ROWS when the count is finished? If not, why not?
+
+The counter might not be COLS * ROWS because multiple threads are updating the ready_count simultaneously,
+causing some updates to be lost. This happens due to threads competing to modify the same variable without coordination,
+leading to an incorrect count.
+
+Question 2: Measure the execution time with and without locking. What could be the difference?
+
+With Locking Enabled: Higher execution time due to lock contention.
+Without Locking Enabled: Lower execution time but incorrect results.
+
+Question 3: hen define a parallel execution for the for_each algorithm std::execution::par_unseq. How much did the execution time drop?
+
+In practice, the execution time should drop extremely low,
+as the algorithm can now utilize multiple cores to process
+different parts of the map concurrently.
+
+
+/*
