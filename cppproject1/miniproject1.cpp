@@ -81,7 +81,7 @@ Question 2: Measure the execution time with and without locking. What could be t
 With Locking Enabled: Higher execution time due to lock contention.
 Without Locking Enabled: Lower execution time but incorrect results.
 
-Question 3: hen define a parallel execution for the for_each algorithm std::execution::par_unseq. How much did the execution time drop?
+Question 3: Define a parallel execution for the for_each algorithm std::execution::par_unseq. How much did the execution time drop?
 
 In practice, the execution time should drop extremely low,
 as the algorithm can now utilize multiple cores to process
