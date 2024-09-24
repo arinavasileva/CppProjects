@@ -6,7 +6,7 @@
 
 // Function to check if the hand is four of a kind or full house
 inline bool is_quadsorfullhouse(const int* k) {
-    // Count occurrences of each card value
+    // Counting occurrences of each card value
     std::unordered_map<int, int> value_count;
     for (int i = 0; i < 5; ++i) {
         value_count[k[i]]++;
@@ -16,7 +16,7 @@ inline bool is_quadsorfullhouse(const int* k) {
     bool has_three_of_a_kind = false;
     bool has_pair = false;
 
-    // Check the counts to see if it's quads or full house
+    // Checking the counts to see if it's quads or full house
     for (const auto& pair : value_count) {
         if (pair.second == 4) {
             has_four_of_a_kind = true;
@@ -29,7 +29,7 @@ inline bool is_quadsorfullhouse(const int* k) {
         }
     }
 
-    // Return true if the hand is quads or full house
+    // Returning true if the hand is quads or full house
     return has_four_of_a_kind || (has_three_of_a_kind && has_pair);
 }
 
